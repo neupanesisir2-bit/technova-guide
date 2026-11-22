@@ -1,51 +1,45 @@
-# TechNova Guide — free static blog starter
+# TechNova Guide
 
-A responsive, static English technology blog starter built with HTML, CSS and vanilla JavaScript. It is designed for free static hosting (Cloudflare Pages is the recommended option).
+A responsive, static technology learning platform built with semantic HTML, CSS and vanilla JavaScript. The website source is stored in the `technova-guide/` directory of this repository.
 
-## Included
-- Responsive homepage and navigation
-- Topic cards and four starter educational articles
+## What is included
+
+- Futuristic responsive homepage with topic discovery and client-side search
+- Beginner guides for AI, Linux, DNS, cybersecurity, Python, web development and digital privacy
+- Browser-based tool lab: password strength checker, AI prompt builder, unit converter, text utilities, secure password generator, JSON formatter/validator and Base64 text converter
 - About, Contact, Privacy Policy and Disclaimer pages
-- `robots.txt` and XML sitemap
-- Basic page titles and meta descriptions
-- No framework, paid plugin, backend or build step
+- XML sitemap, robots.txt and page metadata
+- No framework, build step, paid plugin or backend required
 
-## Before publishing
-1. Choose/confirm your publication name. `TechNova Guide` is a working name; check for naming conflicts before using it commercially.
-2. Replace every `YOUR-SITE.pages.dev` in canonical URLs, `robots.txt` and `sitemap.xml` with the actual deployed URL.
-3. Replace `YOUR-EMAIL@example.com` with a real contact email in Contact, About, Privacy and Disclaimer pages.
-4. Review every article, add your own tested screenshots/examples, cite authoritative references, correct anything that does not match your experience, and remove editorial notes before launch.
-5. Rewrite the privacy policy to match the services you actually use, especially if you add analytics, advertising, cookies, forms or newsletter providers. This template is not legal advice.
-6. Test all links and pages on mobile and desktop.
+## Run locally
 
-## Preview locally
-Open `index.html` in a browser. For a local web server, open a terminal in this folder and run:
+Open `technova-guide/index.html` in a browser, or start a local server from the repository root:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then open `http://localhost:8000/technova-guide/`.
 
-## Deploy to Cloudflare Pages (free static hosting)
-1. Create a GitHub account and a new repository, e.g. `technova-guide`.
-2. Upload the contents of this folder to the repository root (not the outer ZIP folder).
-3. Create/sign in to a Cloudflare account and open Workers & Pages.
-4. Create a Pages project and connect the GitHub repository.
-5. For this plain static site, leave the build command blank and set the output directory to `/` (repository root). If the dashboard requires a framework preset, choose None.
-6. Deploy. Cloudflare will provide a `*.pages.dev` address.
-7. Replace the placeholder site URL in canonical tags, `robots.txt` and `sitemap.xml`, commit and redeploy.
+## Publishing
 
-## Search indexing
-1. Create a Google Search Console property for the deployed site.
-2. Verify ownership using one of the offered methods.
-3. Submit `https://YOUR-SITE.pages.dev/sitemap.xml` after replacing the placeholder.
-4. Use URL Inspection to request indexing for important pages. Indexing and ranking are not guaranteed.
+The production site is intended to be served from the Cloudflare Workers/Pages project connected to this GitHub repository. The static website files live inside `technova-guide/`. Keep the deployment's configured asset/output directory pointed at that folder. A push to the connected production branch should start the configured deployment automatically; confirm the latest deployment is healthy in the Cloudflare dashboard.
 
-## AdSense readiness
-This is a starter, not an AdSense approval guarantee. Do not add ad code yet. First make the site genuinely useful: improve the starter articles with original hands-on research, screenshots, references and specific examples; publish additional substantial articles; ensure every page is complete; add a real contact route; and make the privacy notice accurate for your actual data practices. Apply only when the live site is ready and complies with current AdSense policies. Google reviews the site and approval is not guaranteed.
+Production URL: https://technova-guide.neupanesisir2.workers.dev/
 
-## Notes
-- Static hosting does not provide a database, user accounts, comments or a working contact-form backend. The contact page currently uses an email link.
-- The site loads Google Fonts from an external provider; if you want no third-party font request, remove the `@import` line in `assets/style.css`.
-- No ads are active in this starter. AdSense code should only be added after account/site review instructions and applicable consent/privacy requirements are understood.
+## Before a wider public launch
+
+- Read every guide and test commands on supported software versions.
+- Add original screenshots, reproducible examples and authoritative references.
+- Keep privacy, disclaimer and contact information accurate for the services actually enabled.
+- Test all navigation and tools on mobile and desktop.
+- Confirm the latest Cloudflare production deployment and submit the sitemap in Google Search Console if desired.
+
+## Important limitations
+
+- This is a static site: it does not currently provide accounts, a database, comments or a private contact form.
+- The public GitHub issue tracker is visible to everyone; never post personal information, credentials or security-sensitive details there.
+- Browser tools process input locally in the page. The password checker is an educational estimate, not a security audit. The password generator uses the browser cryptography API when available.
+- Base64 is an encoding format, not encryption.
+- External font files may be requested from Google Fonts. Remove the CSS import if you prefer not to load fonts from that provider.
+- Search indexing and advertising approval are not guaranteed. Review current provider policies before applying for monetization.
